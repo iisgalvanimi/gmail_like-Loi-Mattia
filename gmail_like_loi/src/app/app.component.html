@@ -1,0 +1,20 @@
+<br><br>
+<div class="container">
+  <form class="jumbotron">
+      <h3 class="display-4"> EMAIL </h3>
+      <div class="form-group">
+        
+        <input type = "text" #destinatario class="form-control"> <label>destinatario</label>>
+        <input type = "text" #oggetto class="form-control"> <label>oggetto</label>>
+        <input type = "text" #messaggio class="form-control"> <label>messaggio</label>>
+   
+      <button (click)="sendMail(destinatario, oggetto, messaggio)" class="btn btn-primary">
+        INVIA
+      </button>
+
+      <ul>
+        <li *ngFor = "let e of vettMail">
+          {{e | json}}
+          <app-sent-mail [email] = "e" ></app-sent-mail>
+        </li>
+      </ul>

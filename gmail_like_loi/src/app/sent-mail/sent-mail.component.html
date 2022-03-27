@@ -1,0 +1,29 @@
+{{email | json}}
+
+<p [ngClass] = "cssColor">
+    MESSAGGIO PER: {{email.destinatario}}
+</p>
+
+<p>
+    OGGETTO: {{email.oggetto}}
+</p>
+
+<hr>
+
+
+<ul>
+  <li *ngIf = "show">
+    <p>
+        {{email.messaggio}}
+    </p>
+  </li>  
+</ul>   
+
+
+<!-- <button (click) = "onShowHide()">MOSTRA</button>  -->
+<button *ngIf = "!show" (click) = "onShowHide()" class="btn btn-primary">MOSTRA</button>
+<button *ngIf = "show" (click) = "onShowHide()" class="btn btn-primary">NASCONDI</button>
+
+
+<button (click) = "specializza()"  class="btn btn-primary">SPECIALE</button>
+<hr>
